@@ -13,14 +13,15 @@ body {
   align-items: center; 
   flex-direction: column;      
   height: 100vh;             
-  background-color: #BBD6E7;                
+  background-color: #BBD6E7;  
+  overflow-y: hidden;              
 }
 
 header {
 padding: 24px 0px 0px 0;
  display: flex;
  align-items: end;
- margin-right: 780px;
+ margin-right: 700px;
 
 }
 
@@ -29,8 +30,8 @@ font-size: 2.1rem;
 font-family: "Dela Gothic One", sans-serif;
 }
 
-header a {
- padding: 0px 0px 8px 8px;
+header p {
+ padding: 0px 0px 8px 12px;
  text-decoration: none;
  color: black;
  font-family: "Inconsolata", monospace;
@@ -104,6 +105,10 @@ main {
 
 }
 
+.habit__check--done {
+  background-color: #5B9BD5; 
+}
+
 .things {
     width: 65%;
     margin: 10px auto;
@@ -123,7 +128,9 @@ main {
 }
 
 .reading__container img {
-    width: 35%;
+    width: 125px;       /* largura fixa */
+  height: 190px;      /* altura fixa */
+  object-fit: cover;
     border: 1px solid black;
     box-shadow: 2px 2px 0px;
     border-radius: 10px;
@@ -171,5 +178,15 @@ button {
 
 .book-name {
     font-family: "Inconsolata", monospace;
+}
+
+.frase {
+    font-family: "Inconsolata", monospace;
+    text-align: center;
+    margin: 30px auto;
+}
+
+.frase p {
+    padding: 2px;
 }
 

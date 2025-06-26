@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>habits</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="/images/cat-fav.png" type="image/x-icon">
   </head>
   <body>
     <header>
-        <h1>habits</h1>
-        <a href="#">progress</a>
-        <img src="/images/cat-01.png" alt="">
+      <h1>habits</h1>
+      <p>week progress: <span id="progresso">0%</span></p>
+      <img src="/images/cat-01.png" alt="" />
     </header>
     <main>
       <section id="habits">
@@ -18,115 +19,133 @@
           <div class="habit">
             <h2>water</h2>
             <div class="habit__check-container">
-              <div class="habit__check"></div>
-              <div class="habit__check"></div>
-              <div class="habit__check"></div>
-              <div class="habit__check"></div>
-              <div class="habit__check"></div>
-              <div class="habit__check"></div>
-              <div class="habit__check"></div>
+              <div class="habit__check" data-id="water-1"></div>
+              <div class="habit__check" data-id="water-2"></div>
+              <div class="habit__check" data-id="water-3"></div>
+              <div class="habit__check" data-id="water-4"></div>
+              <div class="habit__check" data-id="water-5"></div>
+              <div class="habit__check" data-id="water-6"></div>
+              <div class="habit__check" data-id="water-7"></div>
             </div>
           </div>
 
           <div class="habit">
             <h2>javascript</h2>
             <div class="habit__check-container">
-              <div class="habit__check"></div>
-              <div class="habit__check"></div>
-              <div class="habit__check"></div>
-              <div class="habit__check"></div>
-              <div class="habit__check"></div>
-              <div class="habit__check"></div>
-              <div class="habit__check"></div>
+              <div class="habit__check" data-id="javascript-1"></div>
+              <div class="habit__check" data-id="javascript-2"></div>
+              <div class="habit__check" data-id="javascript-3"></div>
+              <div class="habit__check" data-id="javascript-4"></div>
+              <div class="habit__check" data-id="javascript-5"></div>
+              <div class="habit__check" data-id="javascript-6"></div>
+              <div class="habit__check" data-id="javascript-7"></div>
             </div>
           </div>
 
-        <div class="habit">
-          <h2>protoype</h2>
-          <div class="habit__check-container">
-            <div class="habit__check"></div>
-            <div class="habit__check"></div>
-            <div class="habit__check"></div>
-            <div class="habit__check"></div>
-            <div class="habit__check"></div>
-            <div class="habit__check"></div>
-            <div class="habit__check"></div>
+          <div class="habit">
+            <h2>duolingo</h2>
+            <div class="habit__check-container">
+              <div class="habit__check" data-id="protoype-1"></div>
+              <div class="habit__check" data-id="protoype-2"></div>
+              <div class="habit__check" data-id="protoype-3"></div>
+              <div class="habit__check" data-id="protoype-4"></div>
+              <div class="habit__check" data-id="protoype-5"></div>
+              <div class="habit__check" data-id="protoype-6"></div>
+              <div class="habit__check" data-id="protoype-7"></div>
+            </div>
           </div>
-        </div>
 
-        <div class="habit">
-          <h2>word</h2>
-          <div class="habit__check-container">
-            <div class="habit__check"></div>
-            <div class="habit__check"></div>
-            <div class="habit__check"></div>
-            <div class="habit__check"></div>
-            <div class="habit__check"></div>
-            <div class="habit__check"></div>
-            <div class="habit__check"></div>
+          <div class="habit">
+            <h2>word</h2>
+            <div class="habit__check-container">
+              <div class="habit__check" data-id="word-1"></div>
+              <div class="habit__check" data-id="word-2"></div>
+              <div class="habit__check" data-id="word-3"></div>
+              <div class="habit__check" data-id="word-4"></div>
+              <div class="habit__check" data-id="word-5"></div>
+              <div class="habit__check" data-id="word-6"></div>
+              <div class="habit__check" data-id="word-7"></div>
+            </div>
           </div>
-        </div>
 
-        <div class="habit">
-          <h2>freecodecamp</h2>
-          <div class="habit__check-container">
-            <div class="habit__check"></div>
-            <div class="habit__check"></div>
-            <div class="habit__check"></div>
-            <div class="habit__check"></div>
-            <div class="habit__check"></div>
-            <div class="habit__check"></div>
-            <div class="habit__check"></div>
+          <div class="habit">
+            <h2>freecodecamp</h2>
+            <div class="habit__check-container">
+              <div class="habit__check" data-id="freecodecamp-1"></div>
+              <div class="habit__check" data-id="freecodecamp-2"></div>
+              <div class="habit__check" data-id="freecodecamp-3"></div>
+              <div class="habit__check" data-id="freecodecamp-4"></div>
+              <div class="habit__check" data-id="freecodecamp-5"></div>
+              <div class="habit__check" data-id="freecodecamp-6"></div>
+              <div class="habit__check" data-id="freecodecamp-7"></div>
+            </div>
           </div>
-        </div>
 
-        <div class="habit">
-          <h2>commit</h2>
-          <div class="habit__check-container">
-            <div class="habit__check"></div>
-            <div class="habit__check"></div>
-            <div class="habit__check"></div>
-            <div class="habit__check"></div>
-            <div class="habit__check"></div>
-            <div class="habit__check"></div>
-            <div class="habit__check"></div>
+          <div class="habit">
+            <h2>commit</h2>
+            <div class="habit__check-container">
+              <div class="habit__check" data-id="commit-1"></div>
+              <div class="habit__check" data-id="commit-2"></div>
+              <div class="habit__check" data-id="commit-3"></div>
+              <div class="habit__check" data-id="commit-4"></div>
+              <div class="habit__check" data-id="commit-5"></div>
+              <div class="habit__check" data-id="commit-6"></div>
+              <div class="habit__check" data-id="commit-7"></div>
+            </div>
           </div>
-        </div>
 
-        <div class="habit">
-          <h2>html and css</h2>
-          <div class="habit__check-container">
-            <div class="habit__check"></div>
-            <div class="habit__check"></div>
-            <div class="habit__check"></div>
-            <div class="habit__check"></div>
-            <div class="habit__check"></div>
-            <div class="habit__check"></div>
-            <div class="habit__check"></div>
+          <div class="habit">
+            <h2>html and css</h2>
+            <div class="habit__check-container">
+              <div class="habit__check" data-id="html-css-1"></div>
+              <div class="habit__check" data-id="html-css-2"></div>
+              <div class="habit__check" data-id="html-css-3"></div>
+              <div class="habit__check" data-id="html-css-4"></div>
+              <div class="habit__check" data-id="html-css-5"></div>
+              <div class="habit__check" data-id="html-css-6"></div>
+              <div class="habit__check" data-id="html-css-7"></div>
+            </div>
           </div>
         </div>
       </section>
     </main>
     <section class="things">
-        <div class="reading">
-            <div class="reading__container">
-                <img src="/images/reading.png" alt=""/>
-                <div class="currently-reading">
-                    <button type="button" id="reading">currently reading:</button>
-                    <p class="book-name">eu te darei o sol</p>
-                </div>
-            </div>
-            <div class="box">
-                <img src="/images/cat-02.png" alt="">
-                <div class="box-anything">
-                    <div class="box-anythinh__button" id="btn-any">
-                        <p>qualquer coisa</p><button type="button">+</button>
-                    </div>
-                </div>
-            </div>
+      <div class="reading">
+        <div class="reading__container">
+          <img
+            src="/images/reading.png"
+            alt=""
+            id="readingImage"
+            style="cursor: pointer"
+          />
 
-
+          <input
+            type="file"
+            id="imageInput"
+            accept="image/*"
+            style="display: none"
+          />
+          <div class="currently-reading">
+            <button type="button" id="reading" onclick="addBookName()">
+              currently reading:
+            </button>
+            <p class="book-name" id="bookName">eu te darei o sol</p>
+          </div>
         </div>
+        <div class="box">
+          <img src="/images/cat-02.png" alt="" />
+          <div class="box-anything">
+            <div class="box-anythinh__button" id="btn-any">
+              <p>qualquer coisa</p>
+              <button onclick="addMessage()">+</button>
+              <button onclick="resetarFrases()">-</button>
+            </div>
+            
+            <div id="fraseContainer" class="frase"></div>
+          </div>
+        </div>
+      </div>
     </section>
+    <script src="script.js"></script>
   </body>
 </html>
