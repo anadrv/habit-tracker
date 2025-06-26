@@ -5,8 +5,6 @@ const inputFile = document.getElementById("imageInput");
 const bookName = document.getElementById("bookName");
 const fraseElement = document.getElementById("frase");
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const dadosSalvos = localStorage.getItem("livroAtual");
 
@@ -34,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const dadosSalvos = localStorage.getItem("frases");
   if (dadosSalvos) {
     const lista = JSON.parse(dadosSalvos);
-    lista.forEach(texto => {
+    lista.forEach((texto) => {
       const p = document.createElement("p");
       p.textContent = texto;
       container.appendChild(p);
