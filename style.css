@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
@@ -6,12 +10,51 @@
 
 body {
   display: flex;
-  justify-content: center;  
   align-items: center; 
   flex-direction: column;      
   height: 100vh;             
-  margin: 0; 
   background-color: #BBD6E7;                
+}
+
+header {
+padding: 24px 0px 0px 0;
+ display: flex;
+ align-items: end;
+ margin-right: 780px;
+
+}
+
+header h1 {
+font-size: 2.1rem;
+font-family: "Dela Gothic One", sans-serif;
+}
+
+header a {
+ padding: 0px 0px 8px 8px;
+ text-decoration: none;
+ color: black;
+ font-family: "Inconsolata", monospace;
+
+}
+
+header img{
+    position: absolute;
+    margin-left: 1000px;
+    margin-bottom: -100px;
+    transition: transform 0.3s;
+}
+
+header img:hover{
+    animation: move 0.6s infinite ease-in-out alternate;
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(-7deg);
+  }
+  100% {
+    transform: rotate(7deg);
+  }
 }
 
 
@@ -21,6 +64,11 @@ main {
     box-shadow: 2px 2px 0px;
     width: 65%;
     border-radius: 10px;
+    margin: 0 auto;
+}
+
+.habits {
+    padding: 30px 0;
 }
 
 .habit {
@@ -32,12 +80,14 @@ main {
 }
 
 .habit h2 {
-    margin-right: 30px;
+    margin-right: 20px;
+    font-family: "Inconsolata", monospace;
+    font-weight: normal;
 }
 
 .habit__check-container {
     display: flex;
-        gap: 10px;
+        gap: 8px;
         align-items: center;
         justify-content: center;
 
@@ -48,8 +98,78 @@ main {
     background-color: rgb(255, 255, 255);
     border: 1px solid black;
     box-shadow: 2px 2px 0px;
-    width: 90px;
-    height: 40px;
+    width: 85px;
+    height: 35px;
     border-radius: 10px;
 
 }
+
+.things {
+    width: 65%;
+    margin: 10px auto;
+}
+
+.reading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 20px;
+}
+
+.reading__container {
+    display: flex;
+    align-items: end;
+    gap: 20px;
+}
+
+.reading__container img {
+    width: 35%;
+    border: 1px solid black;
+    box-shadow: 2px 2px 0px;
+    border-radius: 10px;
+}
+
+
+
+.currently-reading button {
+
+    font-family: "Dela Gothic One", sans-serif;
+}
+
+.box {
+    display: flex;
+    align-items: end;
+}
+
+.box img {
+    width: 25%;
+    
+}
+
+.box-anything {
+background-color: white;
+width: 360px;
+height: 180px;
+margin-right:-28px;
+border: 1px solid black;
+    box-shadow: 2px 2px 0px;
+    border-radius: 10px;
+}
+
+.box-anythinh__button {
+    display: flex;
+    justify-content: end;
+    padding: 10px;
+    gap: 10px;
+    font-family: "Dela Gothic One", sans-serif;
+}
+
+button {
+    all: unset;
+    cursor: pointer;
+}
+
+.book-name {
+    font-family: "Inconsolata", monospace;
+}
+
