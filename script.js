@@ -27,7 +27,7 @@ function addBookName() {
 
 const container = document.getElementById("fraseContainer");
 
-// 🔁 Carrega as frases ao abrir a página
+//Carrega as frases ao abrir a página
 document.addEventListener("DOMContentLoaded", () => {
   const dadosSalvos = localStorage.getItem("frases");
   if (dadosSalvos) {
