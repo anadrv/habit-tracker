@@ -1,192 +1,209 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap");
 
-
+/* RESET */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* BASE */
 body {
   display: flex;
-  align-items: center; 
-  flex-direction: column;      
-  height: 100vh;             
-  background-color: #BBD6E7;  
-  overflow-y: hidden;              
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-color: #BBD6E7;
+  overflow-y: hidden;
 }
 
-header {
-padding: 24px 0px 0px 0;
- display: flex;
- align-items: end;
- margin-right: 700px;
-
+/* ================= HEADER ================= */
+.header {
+  padding-top: 24px;
+  display: flex;
+  align-items: flex-end;
+  margin-right: 700px;
 }
 
-header h1 {
-font-size: 2.1rem;
-font-family: "Dela Gothic One", sans-serif;
+.header__title {
+  font-size: 2.1rem;
+  font-family: "Dela Gothic One", sans-serif;
 }
 
-header p {
- padding: 0px 0px 8px 12px;
- text-decoration: none;
- color: black;
- font-family: "Inconsolata", monospace;
-
+.header__progress {
+  padding: 0 0 8px 12px;
+  font-family: "Inconsolata", monospace;
+  color: black;
 }
 
-header img{
-    position: absolute;
-    margin-left: 1000px;
-    margin-bottom: -100px;
-    transition: transform 0.3s;
+.header__image {
+  position: absolute;
+  margin-left: 1000px;
+  margin-bottom: -100px;
+  transition: transform 0.3s;
 }
 
-header img:hover{
-    animation: move 0.6s infinite ease-in-out alternate;
+.header__image:hover {
+  animation: header-move 0.6s infinite ease-in-out alternate;
 }
 
-@keyframes move {
-  0% {
+@keyframes header-move {
+  from {
     transform: rotate(-7deg);
   }
-  100% {
+  to {
     transform: rotate(7deg);
   }
 }
 
-
-main {
-    background-color: rgb(255, 255, 255);
-    border: 1px solid black;
-    box-shadow: 2px 2px 0px;
-    width: 65%;
-    border-radius: 10px;
-    margin: 0 auto;
+/* ================= MAIN ================= */
+.main {
+  background-color: #fff;
+  border: 1px solid black;
+  box-shadow: 2px 2px 0px;
+  width: 65%;
+  border-radius: 10px;
+  margin: 0 auto;
 }
 
+/* ================= HABITS ================= */
 .habits {
-    padding: 30px 0;
+  padding: 30px 0;
+}
+
+.habits__list {
+  display: flex;
+  flex-direction: column;
 }
 
 .habit {
-    display: flex;
-
-        align-items: center;
-        justify-content: end;
-        padding: 8px 60px 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 8px 60px 8px 0;
 }
 
-.habit h2 {
-    margin-right: 20px;
-    font-family: "Inconsolata", monospace;
-    font-weight: normal;
+.habit__title {
+  margin-right: 20px;
+  font-family: "Inconsolata", monospace;
+  font-weight: normal;
 }
 
-.habit__check-container {
-    display: flex;
-        gap: 8px;
-        align-items: center;
-        justify-content: center;
-
+.habit__checks {
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }
-
 
 .habit__check {
-    background-color: rgb(255, 255, 255);
-    border: 1px solid black;
-    box-shadow: 2px 2px 0px;
-    width: 85px;
-    height: 35px;
-    border-radius: 10px;
-
+  background-color: #fff;
+  border: 1px solid black;
+  box-shadow: 2px 2px 0px;
+  width: 85px;
+  height: 35px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .habit__check--done {
-  background-color: #5B9BD5; 
+  background-color: #5B9BD5;
 }
 
+/* ================= THINGS ================= */
 .things {
-    width: 65%;
-    margin: 10px auto;
+  width: 65%;
+  margin: 10px auto;
 }
 
+/* ================= READING ================= */
 .reading {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 20px;
 }
 
-.reading__container {
-    display: flex;
-    align-items: end;
-    gap: 20px;
+.reading__content {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
 }
 
-.reading__container img {
-    width: 125px;       /* largura fixa */
-  height: 190px;      /* altura fixa */
+.reading__image {
+  width: 125px;
+  height: 190px;
   object-fit: cover;
-    border: 1px solid black;
-    box-shadow: 2px 2px 0px;
-    border-radius: 10px;
+  border: 1px solid black;
+  box-shadow: 2px 2px 0px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
-
-
-.currently-reading button {
-
-    font-family: "Dela Gothic One", sans-serif;
+.reading__input {
+  display: none;
 }
 
+.reading__current {
+  display: flex;
+  flex-direction: column;
+}
+
+.reading__button {
+  
+  all: unset;
+  font-family: "Dela Gothic One", sans-serif;
+  cursor: pointer;
+}
+
+.reading__book-name {
+  font-family: "Inconsolata", monospace;
+}
+
+/* ================= BOX ================= */
 .box {
-    display: flex;
-    align-items: end;
+  display: flex;
+  align-items: flex-end;
 }
 
-.box img {
-    width: 25%;
-    
+.box__image {
+  width: 25%;
 }
 
-.box-anything {
-background-color: white;
-width: 360px;
-height: 180px;
-margin-right:-28px;
-border: 1px solid black;
-    box-shadow: 2px 2px 0px;
-    border-radius: 10px;
+/* ================= REMINDERS ================= */
+.reminders {
+  background-color: white;
+  width: 360px;
+  height: 180px;
+  margin-right: -28px;
+  border: 1px solid black;
+  box-shadow: 2px 2px 0px;
+  border-radius: 10px;
 }
 
-.box-anythinh__button {
-    display: flex;
-    justify-content: end;
-    padding: 10px;
-    gap: 10px;
-    font-family: "Dela Gothic One", sans-serif;
+.reminders__actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  gap: 10px;
+  font-family: "Dela Gothic One", sans-serif;
 }
 
-button {
-    all: unset;
-    cursor: pointer;
+.reminders__title {
+  margin-right: auto;
 }
 
-.book-name {
-    font-family: "Inconsolata", monospace;
+.reminders__button {
+  all: unset;
+  cursor: pointer;
 }
 
-.frase {
-    font-family: "Inconsolata", monospace;
-    text-align: center;
-    margin: 30px auto;
+.reminders__list {
+  font-family: "Inconsolata", monospace;
+  text-align: center;
+  margin: 30px auto;
 }
 
-.frase p {
-    padding: 2px;
+.reminders__list p {
+  padding: 2px;
 }
-

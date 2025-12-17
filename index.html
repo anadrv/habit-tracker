@@ -4,21 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>habits</title>
+
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="media-queries.css" />
     <link rel="shortcut icon" href="/images/cat-fav.png" type="image/x-icon" />
   </head>
+
   <body>
-    <header>
-      <h1>habits</h1>
-      <p>week progress: <span id="progresso">0%</span></p>
-      <img src="/images/cat-01.png" alt="" />
+    <!-- HEADER -->
+    <header class="header">
+      <h1 class="header__title">habits</h1>
+
+      <p class="header__progress">
+        week progress: <span id="progresso">0%</span>
+      </p>
+
+      <img
+        src="/images/cat-01.png"
+        alt=""
+        class="header__image"
+      />
     </header>
-    <main>
-      <section id="habits">
-        <div class="habits">
+
+    <!-- MAIN -->
+    <main class="main">
+      <section class="habits">
+        <div class="habits__list">
+
+          <!-- HABIT -->
           <div class="habit">
-            <h2>water</h2>
-            <div class="habit__check-container">
+            <h2 class="habit__title">water</h2>
+            <div class="habit__checks">
               <div class="habit__check" data-id="water-1"></div>
               <div class="habit__check" data-id="water-2"></div>
               <div class="habit__check" data-id="water-3"></div>
@@ -30,8 +46,8 @@
           </div>
 
           <div class="habit">
-            <h2>javascript</h2>
-            <div class="habit__check-container">
+            <h2 class="habit__title">javascript</h2>
+            <div class="habit__checks">
               <div class="habit__check" data-id="javascript-1"></div>
               <div class="habit__check" data-id="javascript-2"></div>
               <div class="habit__check" data-id="javascript-3"></div>
@@ -43,21 +59,21 @@
           </div>
 
           <div class="habit">
-            <h2>duolingo</h2>
-            <div class="habit__check-container">
-              <div class="habit__check" data-id="protoype-1"></div>
-              <div class="habit__check" data-id="protoype-2"></div>
-              <div class="habit__check" data-id="protoype-3"></div>
-              <div class="habit__check" data-id="protoype-4"></div>
-              <div class="habit__check" data-id="protoype-5"></div>
-              <div class="habit__check" data-id="protoype-6"></div>
-              <div class="habit__check" data-id="protoype-7"></div>
+            <h2 class="habit__title">duolingo</h2>
+            <div class="habit__checks">
+              <div class="habit__check" data-id="prototype-1"></div>
+              <div class="habit__check" data-id="prototype-2"></div>
+              <div class="habit__check" data-id="prototype-3"></div>
+              <div class="habit__check" data-id="prototype-4"></div>
+              <div class="habit__check" data-id="prototype-5"></div>
+              <div class="habit__check" data-id="prototype-6"></div>
+              <div class="habit__check" data-id="prototype-7"></div>
             </div>
           </div>
 
           <div class="habit">
-            <h2>word</h2>
-            <div class="habit__check-container">
+            <h2 class="habit__title">word</h2>
+            <div class="habit__checks">
               <div class="habit__check" data-id="word-1"></div>
               <div class="habit__check" data-id="word-2"></div>
               <div class="habit__check" data-id="word-3"></div>
@@ -69,8 +85,8 @@
           </div>
 
           <div class="habit">
-            <h2>freecodecamp</h2>
-            <div class="habit__check-container">
+            <h2 class="habit__title">freecodecamp</h2>
+            <div class="habit__checks">
               <div class="habit__check" data-id="freecodecamp-1"></div>
               <div class="habit__check" data-id="freecodecamp-2"></div>
               <div class="habit__check" data-id="freecodecamp-3"></div>
@@ -82,8 +98,8 @@
           </div>
 
           <div class="habit">
-            <h2>commit</h2>
-            <div class="habit__check-container">
+            <h2 class="habit__title">commit</h2>
+            <div class="habit__checks">
               <div class="habit__check" data-id="commit-1"></div>
               <div class="habit__check" data-id="commit-2"></div>
               <div class="habit__check" data-id="commit-3"></div>
@@ -95,8 +111,8 @@
           </div>
 
           <div class="habit">
-            <h2>html and css</h2>
-            <div class="habit__check-container">
+            <h2 class="habit__title">html and css</h2>
+            <div class="habit__checks">
               <div class="habit__check" data-id="html-css-1"></div>
               <div class="habit__check" data-id="html-css-2"></div>
               <div class="habit__check" data-id="html-css-3"></div>
@@ -106,46 +122,69 @@
               <div class="habit__check" data-id="html-css-7"></div>
             </div>
           </div>
+
         </div>
       </section>
     </main>
+
+    <!-- THINGS -->
     <section class="things">
       <div class="reading">
-        <div class="reading__container">
+
+        <div class="reading__content">
           <img
             src="/images/reading.png"
             alt=""
+            class="reading__image"
             id="readingImage"
-            style="cursor: pointer"
           />
 
           <input
             type="file"
             id="imageInput"
             accept="image/*"
-            style="display: none"
+            class="reading__input"
           />
-          <div class="currently-reading">
-            <button type="button" id="reading" onclick="addBookName()">
+
+          <div class="reading__current">
+            <button
+              type="button"
+              class="reading__button"
+              onclick="addBookName()"
+            >
               currently reading:
             </button>
-            <p class="book-name" id="bookName">eu te darei o sol</p>
+
+            <p class="reading__book-name" id="bookName">
+              eu te darei o sol
+            </p>
           </div>
         </div>
+
         <div class="box">
-          <img src="/images/cat-02.png" alt="" />
-          <div class="box-anything">
-            <div class="box-anythinh__button" id="btn-any">
-              <p>lembretes</p>
-              <button onclick="addMessage()">+</button>
-              <button onclick="resetarFrases()">-</button>
+          <img
+            src="/images/cat-02.png"
+            alt=""
+            class="box__image"
+          />
+
+          <div class="reminders">
+            <div class="reminders__actions">
+              <p class="reminders__title">lembretes</p>
+              <button class="reminders__button" onclick="addMessage()">+</button>
+              <button class="reminders__button" onclick="resetarFrases()">-</button>
             </div>
 
-            <div id="fraseContainer" class="frase"></div>
+            <div
+              id="fraseContainer"
+              class="reminders__list"
+            ></div>
           </div>
         </div>
+
       </div>
     </section>
+
     <script src="script.js"></script>
   </body>
 </html>
