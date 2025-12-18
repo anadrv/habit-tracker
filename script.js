@@ -4,133 +4,128 @@ const imageElement = document.getElementById("readingImage");
 const inputFile = document.getElementById("imageInput");
 const bookName = document.getElementById("bookName");
 const fraseElement = document.getElementById("frase");
+const container = document.getElementById("fraseContainer");
+
+/*BOOK NAME*/
 
 document.addEventListener("DOMContentLoaded", () => {
-  const dadosSalvos = localStorage.getItem("livroAtual");
+  const savedBook = localStorage.getItem("currentBook");
 
-  if (dadosSalvos) {
-    const objeto = JSON.parse(dadosSalvos);
-    bookName.textContent = objeto.nome;
+  if (savedBook) {
+    const data = JSON.parse(savedBook);
+    bookName.textContent = data.name;
   }
 });
 
 function addBookName() {
-  const nome = window.prompt("book name:");
+  const name = window.prompt("Book name:");
 
-  if (nome && nome.trim() !== "") {
-    bookName.textContent = nome;
+  if (name && name.trim() !== "") {
+    bookName.textContent = name;
 
-    const dados = { nome: nome };
-    localStorage.setItem("livroAtual", JSON.stringify(dados));
+    const data = { name };
+    localStorage.setItem("currentBook", JSON.stringify(data));
   }
 }
 
-const container = document.getElementById("fraseContainer");
+/*REMINDERS / MESSAGES*/
 
-//Carrega as frases ao abrir a página
 document.addEventListener("DOMContentLoaded", () => {
-  const dadosSalvos = localStorage.getItem("frases");
-  if (dadosSalvos) {
-    const lista = JSON.parse(dadosSalvos);
-    lista.forEach((texto) => {
+  const savedMessages = localStorage.getItem("messages");
+
+  if (savedMessages) {
+    const list = JSON.parse(savedMessages);
+    list.forEach((text) => {
       const p = document.createElement("p");
-      p.textContent = texto;
+      p.textContent = text;
       container.appendChild(p);
     });
   }
 });
 
 function addMessage() {
-  const dadosSalvos = localStorage.getItem("frases");
-  const lista = dadosSalvos ? JSON.parse(dadosSalvos) : [];
+  const savedMessages = localStorage.getItem("messages");
+  const list = savedMessages ? JSON.parse(savedMessages) : [];
 
-  if (lista.length >= 3) {
-    alert("Você só pode adicionar até 3 coisas.");
+  if (list.length >= 3) {
+    alert("You can only add up to 3 items.");
     return;
   }
 
-  const novaFrase = window.prompt("Digite ai");
+  const newMessage = window.prompt("Type something:");
 
-  if (novaFrase && novaFrase.trim() !== "") {
-    // Cria e mostra o novo <p>
+  if (newMessage && newMessage.trim() !== "") {
     const p = document.createElement("p");
-    p.textContent = novaFrase;
+    p.textContent = newMessage;
     container.appendChild(p);
 
-    // Salva no localStorage
-    lista.push(novaFrase);
-    localStorage.setItem("frases", JSON.stringify(lista));
+    list.push(newMessage);
+    localStorage.setItem("messages", JSON.stringify(list));
   }
 }
 
-function resetarFrases() {
-  const confirma = window.confirm("Tem certeza que quer remover tudo?");
+function resetMessages() {
+  const confirmReset = window.confirm("Are you sure you want to remove everything?");
 
-  if (confirma) {
-    localStorage.removeItem("frases");
-
-    const container = document.getElementById("fraseContainer");
+  if (confirmReset) {
+    localStorage.removeItem("messages");
     container.innerHTML = "";
-
-    alert("Todas as frases foram removidas!");
-  } else {
+    alert("All reminders were removed!");
   }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+/*HABITS*/
+
+document.addEventListener("DOMContentLoaded", () => {
   const checks = document.querySelectorAll(".habit__check");
 
-  function carregarEstados() {
-    const dados = localStorage.getItem("habitos");
-
-    if (dados) {
-      return JSON.parse(dados);
-    } else {
-      return {};
-    }
+  function loadHabitStates() {
+    const data = localStorage.getItem("habits");
+    return data ? JSON.parse(data) : {};
   }
 
-  function salvarEstados(estados) {
-    localStorage.setItem("habitos", JSON.stringify(estados));
+  function saveHabitStates(states) {
+    localStorage.setItem("habits", JSON.stringify(states));
   }
 
-  let estados = carregarEstados();
+  let states = loadHabitStates();
 
-  //
   checks.forEach((check) => {
     const id = check.dataset.id;
-    if (estados[id]) {
+
+    if (states[id]) {
       check.classList.add("habit__check--done");
     }
 
-    //CHECK
     check.addEventListener("click", () => {
       check.classList.toggle("habit__check--done");
-      estados[id] = check.classList.contains("habit__check--done");
-      salvarEstados(estados);
-      atualizarProgresso();
+      states[id] = check.classList.contains("habit__check--done");
+      saveHabitStates(states);
+      updateProgress();
     });
   });
 
-  function atualizarProgresso() {
+  function updateProgress() {
     const total = checks.length;
-    const feitos = Object.values(estados).filter(Boolean).length;
-    const percentual = Math.round((feitos / total) * 100);
+    const done = Object.values(states).filter(Boolean).length;
+    const percentage = Math.round((done / total) * 100);
 
-    const progressoEl = document.getElementById("progresso");
-    if (progressoEl) {
-      progressoEl.textContent = `${percentual}%`;
+    const progressEl = document.getElementById("progresso");
+    if (progressEl) {
+      progressEl.textContent = `${percentage}%`;
     }
   }
 
-  atualizarProgresso();
+  updateProgress();
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const imagemSalva = localStorage.getItem("readingImage");
+/*READING IMAGE*/
 
-  if (imagemSalva) {
-    imageElement.src = imagemSalva;
+document.addEventListener("DOMContentLoaded", () => {
+  const savedImage = localStorage.getItem("readingImage");
+
+  if (savedImage) {
+    imageElement.src = savedImage;
   }
 });
 
@@ -138,18 +133,16 @@ imageElement.addEventListener("click", () => {
   inputFile.click();
 });
 
-//Ao escolher imagem, salvar e mostrar
 inputFile.addEventListener("change", () => {
   const file = inputFile.files[0];
 
   if (file) {
     const reader = new FileReader();
 
-    reader.onload = function (e) {
+    reader.onload = (e) => {
       const base64Image = e.target.result;
-
-      imageElement.src = base64Image; // mostra
-      localStorage.setItem("readingImage", base64Image); // salva
+      imageElement.src = base64Image;
+      localStorage.setItem("readingImage", base64Image);
     };
 
     reader.readAsDataURL(file);

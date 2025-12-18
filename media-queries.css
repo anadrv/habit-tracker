@@ -1,13 +1,14 @@
 /* TABLET */
 @media (max-width: 1024px) {
   .header {
-    margin-right: 0;
     justify-content: center;
+    margin-right: 0;
   }
 
   .header__image {
-    margin-left: 0;
-    right: 20px;
+    top: -10px;
+    right: 16px;
+    max-width: 25vw;
   }
 
   .main,
@@ -31,6 +32,16 @@
   }
 }
 
+/* TABLET */
+@media (max-width: 1380px) {
+
+
+  .header__image {
+    display: none;
+  }
+
+}
+
 /*  MOBILE  */
 @media (max-width: 600px) {
   body {
@@ -42,13 +53,22 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-right: 0;
+    margin: 0;
   }
 
-  .header__image {
+  .header__progress {
+    font-size: 1.2rem;
+  }
+
+   .header__image {
     position: static;
-    margin: 0;
     width: 120px;
+    margin: 12px 0;
+    display: block;
+  }
+
+  .header__title {
+    font-size: 2.5rem;
   }
 
   .main,
@@ -64,6 +84,11 @@
 
   .habit__title {
     margin-bottom: 8px;
+  }
+
+  .habits__list {
+    display: flex;
+    align-items: center;
   }
 
   .habit__checks {
@@ -82,21 +107,32 @@
   }
 
   .reading__content {
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
+  }
+
+  .reading__current {
+    margin: 10px;
+    font-size: 1.3rem;
   }
 
   .box {
     flex-direction: column;
     align-items: center;
+    width: 90%;
   }
 
   .box__image {
     width: 120px;
+    align-self: flex-start;
   }
 
   .reminders {
     width: 100%;
     margin-right: 0;
+  }
+
+  .reminders__list {
+    padding: 20px;
   }
 }
