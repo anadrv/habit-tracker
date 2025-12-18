@@ -67,5 +67,21 @@ Aplicação front-end para acompanhamento de hábitos semanais, com foco em orga
    git clone https://github.com/seu-usuario/habits-tracker.git
    
  2. **Acesse a pasta do projeto** 🐱
-   ```bash
-   cd habits-tracker
+  ```bash
+    git clone https://github.com/seu-usuario/habits-tracker.git
+ ```
+  3. Abra o projeto no navegador: Clique duas vezes no arquivo index.html ou Utilize uma extensão como Live Server no VS Code 
+
+4. Comece a usar: 😸
+
+- Marque os hábitos ao longo da semana
+- Acompanhe o progresso automaticamente
+- Adicione o livro que está lendo
+- Crie lembretes personalizados
+
+💡 Dica: os dados ficam salvos no navegador usando LocalStorage, então mesmo fechando a página suas informações continuam lá.
+> 🐱 **Obs.:** No momento, os nomes de cada hábito estão sendo inseridos **diretamente no código**.  
+> Essa abordagem é **temporária** e poderá ser substituída futuramente por uma funcionalidade de cadastro dinâmico.
+
+
+
