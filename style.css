@@ -18,7 +18,7 @@ body {
   overflow-y: hidden;
 }
 
-/* ================= HEADER ================= */
+/*  HEADER  */
 .header {
   padding-top: 24px;
   display: flex;
@@ -57,7 +57,7 @@ body {
   }
 }
 
-/* ================= MAIN ================= */
+/* MAIN */
 .main {
   background-color: #fff;
   border: 1px solid black;
@@ -67,7 +67,7 @@ body {
   margin: 0 auto;
 }
 
-/* ================= HABITS ================= */
+/*  HABITS */
 .habits {
   padding: 30px 0;
 }
@@ -110,13 +110,13 @@ body {
   background-color: #5B9BD5;
 }
 
-/* ================= THINGS ================= */
+/* THINGS  */
 .things {
   width: 65%;
   margin: 10px auto;
 }
 
-/* ================= READING ================= */
+/* READING  */
 .reading {
   display: flex;
   justify-content: space-between;
@@ -160,7 +160,7 @@ body {
   font-family: "Inconsolata", monospace;
 }
 
-/* ================= BOX ================= */
+/* BOX */
 .box {
   display: flex;
   align-items: flex-end;
@@ -170,7 +170,7 @@ body {
   width: 25%;
 }
 
-/* ================= REMINDERS ================= */
+/*  REMINDERS  */
 .reminders {
   background-color: white;
   width: 360px;

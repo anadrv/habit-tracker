@@ -1,4 +1,4 @@
-/* ================= TABLET ================= */
+/* TABLET */
 @media (max-width: 1024px) {
   .header {
     margin-right: 0;
@@ -31,7 +31,7 @@
   }
 }
 
-/* ================= MOBILE ================= */
+/*  MOBILE  */
 @media (max-width: 600px) {
   body {
     height: auto;
